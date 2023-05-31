@@ -30,24 +30,34 @@ github-pr-review can use Markdown and add a link to rule page in reviewdog repor
 ### [.github/workflows/reviewdog.yml](.github/workflows/reviewdog.yml)
 
 ```yml
-name: reviewdog
+name: Reviewdog
+
 on: [pull_request]
+
 jobs:
   credo:
-    name: runner / credo
+    name: Credo
     runs-on: ubuntu-latest
-    container:
-      image: elixir:1.12-slim
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: '24'
+          elixir-version: '1.12'
       - name: Install Dependencies
         run: |
           mix local.rebar --force
           mix local.hex --force
           mix deps.get
-      - name: credo
+      - name: Git configuration
+        run: git config --global --add safe.directory ${{ github.workspace }}
+      - name: Run Credo
+        run: mix credo --format=flycheck --all --strict
+      - name: Credo reviewdog
         uses: yevh/reviewdog-action-credo@1d68a8bc263b3c09fc6db61641f4ba9aa0c3c027 #v1.3
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review # Change reporter.
+          reporter: github-pr-review
 ```
