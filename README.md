@@ -46,7 +46,7 @@ jobs:
           mix local.hex --force
           mix deps.get
       - name: credo
-        uses: yevh/reviewdog-action-credo@v1d68a8bc263b3c09fc6db61641f4ba9aa0c3c027 #v1.3
+        uses: yevh/reviewdog-action-credo@1d68a8bc263b3c09fc6db61641f4ba9aa0c3c027 #v1.3
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
