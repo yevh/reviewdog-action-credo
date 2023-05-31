@@ -2,6 +2,9 @@
 
 cd "$GITHUB_WORKSPACE"
 
+# Add safety configurations for Git
+git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 mix credo suggest --strict --format=flycheck \
