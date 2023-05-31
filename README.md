@@ -1,7 +1,8 @@
 # GitHub Action: Run credo with reviewdog
 
 [![Docker Image CI](https://github.com/red-shirts/reviewdog-action-credo/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/red-shirts/reviewdog-action-credo/actions)
-[![Release](https://img.shields.io/github/release/red-shirts/reviewdog-action-credo.svg?maxAge=43200)](https://github.com/red-shirts/reviewdog-action-credo/releases)
+
+> Supports the latest Elixir version
 
 This action runs [credo](https://github.com/rrrene/credo) with
 [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests to improve
