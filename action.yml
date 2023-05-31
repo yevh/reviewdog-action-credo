@@ -1,6 +1,6 @@
-name: 'Run credo with reviewdog'
-description: '🐶 Run credo with reviewdog on pull requests to improve code review experience.'
-author: 'Hauleth'
+name: 'Credo with reviewdog'
+description: 'Credo with reviewdog on pull requests to improve code review experience.'
+author: 'Yevhenii'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN.'
