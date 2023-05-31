@@ -1,4 +1,4 @@
-# GitHub Action: Run credo with reviewdog
+# GitHub Action: Credo with reviewdog
 
 [![Docker Image CI](https://github.com/red-shirts/reviewdog-action-credo/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/red-shirts/reviewdog-action-credo/actions)
 
